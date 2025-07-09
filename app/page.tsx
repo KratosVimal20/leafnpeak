@@ -1,102 +1,136 @@
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
+import Navbar from './Navbar';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="w-full text-white">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* ✅ Sticky Glass Navbar */}
+      <Navbar />
+
+      {/* ✅ Hero & Features Section with Background */}
+      <div className="relative z-10 w-full overflow-hidden">
+        {/* 🌄 Background Image and Overlay */}
+        <div className="absolute inset-0 -z-20 h-full w-full">
+          <Image
+            src="/background.png"
+            alt="Leaf n' Peak Camping Gear Malaysia"
+            fill
+            priority
+            quality={100}
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-black/40 z-0" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        {/* ✅ Main Content */}
+        <main className="relative z-10 px-6 pt-28 pb-36 space-y-28">
+          {/* 🌲 Hero Section */}
+          <section className="text-center max-w-5xl mx-auto px-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+              Camping Gear Rental in KL & Selangor — Leaf n' Peak
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-white/90">
+              Affordable, clean, and ready-to-go tents delivered to your doorstep in Kuala Lumpur, Selangor, or anywhere in Malaysia.
+            </p>
+            <div className="mt-8">
+              <button className="glass-button">Explore Gear</button>
+            </div>
+          </section>
+
+          {/* 🌟 Why Choose Us */}
+          <section className="text-center max-w-5xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Leaf n' Peak?</h2>
+            <p className="text-lg text-white/90 mb-12">
+              Trusted by outdoor lovers in KL and Selangor, our camping gear is top-quality, sanitized, and beginner-friendly. Whether it's a weekend in Janda Baik or a trip to Taman Negara — we’ve got the gear.
+            </p>
+
+            {/* 🌿 Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+              <div className="rounded-xl p-6 bg-white/20 backdrop-blur-md shadow-md">
+                <h3 className="text-xl font-semibold mb-2">🎪 Easy Setup Tents</h3>
+                <p className="text-white/80">Pitch your tent in under 5 minutes with our beginner-friendly kits.</p>
+              </div>
+              <div className="rounded-xl p-6 bg-white/20 backdrop-blur-md shadow-md">
+                <h3 className="text-xl font-semibold mb-2">🚚 Fast KL & Selangor Delivery</h3>
+                <p className="text-white/80">We deliver camping sets right to your home or campsite — fast and reliable.</p>
+              </div>
+              <div className="rounded-xl p-6 bg-white/20 backdrop-blur-md shadow-md">
+                <h3 className="text-xl font-semibold mb-2">🛠️ All-In-One Packages</h3>
+                <p className="text-white/80">Tents, groundsheets, chairs, tables — everything you need in one kit.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 🎯 CTA */}
+          <section className="text-center max-w-3xl mx-auto pt-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Rent Camping Gear in Malaysia Today</h2>
+            <p className="text-lg text-white/90 mb-6">
+              Book online now and start your outdoor adventure with the best camping rentals in KL and beyond.
+            </p>
+            <button className="glass-button">Book Now</button>
+          </section>
+        </main>
+      </div>
+
+      {/* ✅ Testimonials Section — OUTSIDE background image */}
+      <section className="bg-white text-black py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">What Campers in Malaysia Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="bg-white shadow-lg p-6 rounded-xl border border-gray-200">
+              <p className="text-gray-700 mb-4">
+                “We camped at Janda Baik and the tent setup was super simple. Amazing service!”
+              </p>
+              <div className="font-semibold">Aiman R.</div>
+              <div className="text-sm text-gray-500">Kuala Lumpur</div>
+            </div>
+            <div className="bg-white shadow-lg p-6 rounded-xl border border-gray-200">
+              <p className="text-gray-700 mb-4">
+                “Affordable gear and really friendly support. Definitely renting again.”
+              </p>
+              <div className="font-semibold">Nadia M.</div>
+              <div className="text-sm text-gray-500">Petaling Jaya</div>
+            </div>
+            <div className="bg-white shadow-lg p-6 rounded-xl border border-gray-200">
+              <p className="text-gray-700 mb-4">
+                “The full kit made camping in Taman Negara stress-free. Great quality too.”
+              </p>
+              <div className="font-semibold">Jason L.</div>
+              <div className="text-sm text-gray-500">Shah Alam</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔻 Footer */}
+      <footer className="bg-[#1B2F33] text-white py-12 px-6 mt-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Leaf n' Peak</h3>
+            <p className="text-white/70">
+              Premium camping gear rental in KL, Selangor & across Malaysia.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-3">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="/" className="hover:text-[var(--brand-sand)]">Home</a></li>
+              <li><a href="/rentals" className="hover:text-[var(--brand-sand)]">Rentals</a></li>
+              <li><a href="/contact" className="hover:text-[var(--brand-sand)]">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-3">Contact Us</h4>
+            <p className="text-white/70">WhatsApp: +60-123-456789</p>
+            <p className="text-white/70">Email: hello@leafnpeak.my</p>
+          </div>
+        </div>
+
+        <div className="mt-10 text-center text-white/50 text-xs">
+          © {new Date().getFullYear()} Leaf n' Peak. All rights reserved.
+        </div>
       </footer>
     </div>
   );
