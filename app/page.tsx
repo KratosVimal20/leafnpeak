@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import Navbar from './Navbar';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <div className="w-full text-white">
-
       {/* ✅ Sticky Glass Navbar */}
       <Navbar />
 
@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-20 h-full w-full">
           <Image
             src="/background.png"
-            alt="Leaf n' Peak Camping Gear Malaysia"
+            alt="Leaf n&apos; Peak camping gear rental in Malaysia"
             fill
             priority
             quality={100}
@@ -29,21 +29,23 @@ export default function HomePage() {
           {/* 🌲 Hero Section */}
           <section className="text-center max-w-5xl mx-auto px-6">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
-              Camping Gear Rental in KL & Selangor — Leaf n' Peak
+              Camping Gear Rental in KL & Selangor — Leaf n&apos; Peak
             </h1>
             <p className="mt-4 text-lg md:text-xl text-white/90">
               Affordable, clean, and ready-to-go tents delivered to your doorstep in Kuala Lumpur, Selangor, or anywhere in Malaysia.
             </p>
             <div className="mt-8">
-              <button className="glass-button">Explore Gear</button>
+              <Link href="/rentals">
+                <button className="glass-button">Explore Gear</button>
+              </Link>
             </div>
           </section>
 
           {/* 🌟 Why Choose Us */}
           <section className="text-center max-w-5xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Leaf n' Peak?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Leaf n&apos; Peak?</h2>
             <p className="text-lg text-white/90 mb-12">
-              Trusted by outdoor lovers in KL and Selangor, our camping gear is top-quality, sanitized, and beginner-friendly. Whether it's a weekend in Janda Baik or a trip to Taman Negara — we’ve got the gear.
+              Trusted by outdoor lovers in KL and Selangor, our camping gear is top-quality, sanitized, and beginner-friendly. Whether it&apos;s a weekend in Janda Baik or a trip to Taman Negara — we&apos;ve got the gear.
             </p>
 
             {/* 🌿 Features */}
@@ -63,13 +65,15 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 🎯 CTA */}
+          {/* 🎯 Call to Action */}
           <section className="text-center max-w-3xl mx-auto pt-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Rent Camping Gear in Malaysia Today</h2>
             <p className="text-lg text-white/90 mb-6">
               Book online now and start your outdoor adventure with the best camping rentals in KL and beyond.
             </p>
-            <button className="glass-button">Book Now</button>
+            <Link href="/rentals">
+              <button className="glass-button">Book Now</button>
+            </Link>
           </section>
         </main>
       </div>
@@ -108,7 +112,7 @@ export default function HomePage() {
       <footer className="bg-[#1B2F33] text-white py-12 px-6 mt-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
           <div>
-            <h3 className="text-xl font-semibold mb-3">Leaf n' Peak</h3>
+            <h3 className="text-xl font-semibold mb-3">Leaf n&apos; Peak</h3>
             <p className="text-white/70">
               Premium camping gear rental in KL, Selangor & across Malaysia.
             </p>
@@ -116,9 +120,15 @@ export default function HomePage() {
           <div>
             <h4 className="font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="hover:text-[var(--brand-sand)]">Home</a></li>
-              <li><a href="/rentals" className="hover:text-[var(--brand-sand)]">Rentals</a></li>
-              <li><a href="/contact" className="hover:text-[var(--brand-sand)]">Contact</a></li>
+              <li>
+                <Link href="/" className="hover:text-[var(--brand-sand)]">Home</Link>
+              </li>
+              <li>
+                <Link href="/rentals" className="hover:text-[var(--brand-sand)]">Rentals</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[var(--brand-sand)]">Contact</Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -129,7 +139,7 @@ export default function HomePage() {
         </div>
 
         <div className="mt-10 text-center text-white/50 text-xs">
-          © {new Date().getFullYear()} Leaf n' Peak. All rights reserved.
+          © {new Date().getFullYear()} Leaf n&apos; Peak. All rights reserved.
         </div>
       </footer>
     </div>

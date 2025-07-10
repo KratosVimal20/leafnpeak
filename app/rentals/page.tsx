@@ -1,4 +1,5 @@
 // app/rentals/page.tsx
+import Image from 'next/image';
 
 const tents = [
   {
@@ -37,7 +38,7 @@ export default function RentalsPage() {
             key={tent.id}
             className="bg-white border rounded-xl shadow hover:shadow-lg transition p-4 flex flex-col"
           >
-            <img
+            <Image
               src={tent.image}
               alt={tent.name}
               className="w-full h-48 object-cover rounded mb-4"
